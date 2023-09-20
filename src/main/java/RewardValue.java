@@ -13,10 +13,10 @@ public RewardValue(int milesValue){
     }
 
     public double getCashValue() {
-        return milesValue/0.0035;
+        return milesValue*0.0035;
     }
 
     public double getMilesValue() {
-        return cashValue*0.0035;
+        return cashValue/0.0035;
     }
 }
