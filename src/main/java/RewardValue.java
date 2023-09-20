@@ -1,9 +1,9 @@
 
 public class RewardValue
 {
-private double cashValue;
-private int milesValue;
-public RewardValue(double cashValue)
+private double cashValue; // Creating Variables for this class to access
+private int milesValue; // Creating Variables for this class to access
+public RewardValue(double cashValue)  //
 {
     this.cashValue=cashValue;
 }
