@@ -20,11 +20,46 @@ public class RewardValueTests {
 
     @Test
     void convert_from_cash_to_miles() {
-        assert false;
+        double cashValue = 100;
+        var rewardValue = new RewardValue(cashValue);
+        int expectedMiles = (int) (cashValue * 100);
+        assertEquals(expectedMiles, rewardValue.convertCashToMiles());
     }
 
     @Test
     void convert_from_miles_to_cash() {
-        assert false;
+        int milesValue = 5000;  // Assuming a conversion rate of $0.005 per mile
+        var rewardValue = new RewardValue(milesValue);
+        double expectedCash = milesValue * 0.0035;
+        assertEquals(expectedCash, rewardValue.convertMilesToCash());
     }
 }
+class RewardValue{
+    private double cashValue;
+    private int milesValue;
+
+    public RewardValue(double cashValue){
+        this.cashValue=cashValue;
+        this.milesValue = (int) (cashValue*100);
+    }
+
+    public RewardValue(int milesValue){
+        this.milesValue = milesValue;
+        this.cashValue = milesValue*0.0035;
+    }
+
+    public double getCashValue(){
+        return cashValue;
+    }
+    public int getMilesValue(){
+        return milesValue;
+    }
+    public int convertCashToMiles(){
+        return (int) (cashValue * 100);
+    }
+
+    public double convertMilesToCash(){
+        return milesValue *0.0035;
+    }
+}
+
